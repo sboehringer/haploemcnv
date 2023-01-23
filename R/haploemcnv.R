@@ -35,15 +35,15 @@ packageDefinition = list(
 		            #"gt", 
 		),
 		suggests = c(),
-		news = "0.1-0	Initial release",
+		news = "0.3-0	Documentation\n0.2-0	Installable version\n0.1-0	Initial release",
 		license = 'LGPL-2'
 		#vignettes = "vignettes/vignette-package.Rmd"
 	),
 	git = list(
 		readme = '## Installation\n```{r}\nlibrary(devtools);\ninstall_github("sboehringer/haploemcnv")\n```\n',
 		push = FALSE,
-		pushOnNewVersion = TRUE
-		#remote = 'https://github.com/sboehringer/package.git'
+		pushOnNewVersion = TRUE,
+		remote = 'https://github.com/sboehringer/haploemcnv.git'
 	)
 )
 
