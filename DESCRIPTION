@@ -1,0 +1,96 @@
+Package: haploemcnv
+Type: Package
+Title: EM algorithms for reconstructing haplotypes in coplex genetic regions
+Version: 0.1-0
+Date: 2023-01-23
+Author: Lars van der Burg <lars.lj.vdburg@gmail.com>
+Maintainer: Lars van der Burg <lars.lj.vdburg@gmail.com>
+Description: EM algorithms for reconstructing haplotypes in coplex genetic regions inclouding copy number variations.
+License: LGPL-2
+Encoding: UTF-8
+Depends: 
+    stringr,
+    Matrix,
+    glmnet,
+    MASS,
+    rlang,
+    gridExtra,
+    philentropy,
+    gtools,
+    penalized,
+    cluster,
+    survival,
+    dplyr
+Collate: 
+    all_options.R
+    changing_unresolvables.R
+    KIR2DS4_combining.R
+    make_data_frame.R
+    multiple_gene_copies.R
+    multiple_single_options.R
+    remove_doubles.R
+    remove_strange_symbols.R
+    splitting_slashes.R
+    combining_AF.R
+    excluding_genotypes.R
+    EM_algorithm.R
+    EM_init_mat.R
+    likelihood_haplotypes.R
+    combining_genes.R
+    Diplo2Geno.R
+    Geno2Diplo.R
+    grouping_order_all.R
+    grouping_order_iter.R
+    grouping_order.R
+    Haplo2AF.R
+    Dprime_to_Delta.R
+    LD.R
+    reducing_haplo.R
+    B.R
+    information_loss.R
+    reducing_mat.R
+    SS.R
+    diplotype_contribution.R
+    dtContribMat.R
+    Functions_required.R
+    Geno2EM_SB.R
+    frequencies_naive.R
+    Naive_analysis.R
+    Naive_EMbased_analysis.R
+    changing_AFs_in_HFs.R
+    comb_frequency.R
+    cut_vector.R
+    external_information_haplotypes.R
+    HF_2_DF.R
+    HT_reconstruction_criteria.R
+    HT_reconstruction.R
+    iterative_modeling.R
+    KL_divergence.R
+    Nested_loop_plot.R
+    NEW_actual_analysis_HT_summary.R
+    NEW_actual_analysis_inside_regression_summary.R
+    NEW_actual_analysis_outside_regression_summary.R
+    NEW_weighted_predictor_matrix.R
+    outside_regression_models.R
+    penalized_significance.R
+    reducing_list.R
+    reordering_grouping_results.R
+    rounding.R
+    table_maker.R
+    vector_2_table.R
+    haploemcnv.R
+Suggests: 
+Enhances: 
+    ggplot2,
+    ggnewscale,
+    RColorBrewer,
+    readxl,
+    mctest,
+    ggpubr,
+    cowplot,
+    scales,
+    ggtern,
+    bench,
+    ggthemes
+SystemRequirements: 
+RoxygenNote: 7.1.2
