@@ -1,4 +1,4 @@
-# R-package `haploemcnv`, version 0.4-0
+# R-package `haploemcnv`, version 0.4-2
 ## Installation
 ```{r}
 library(devtools);
