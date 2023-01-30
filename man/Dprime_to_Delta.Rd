@@ -17,5 +17,5 @@ Dprime_to_Delta(LD_out, p_i = NULL, q_j = NULL)
 Vector with Delta_{ij} values.
 }
 \description{
-Support function for \code{\link{KIR_simulation_preparation_real}}.
+Calculation of Delta_{ij}
 }

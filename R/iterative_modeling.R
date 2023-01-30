@@ -2,22 +2,23 @@
 #' 
 #' @description Regression models with only the allele effects are appropriate when the effects are only attributed to alleles, but additional effects that occur when specific alleles come together in a haplotype. Therefore certain haplotypes will need to be included as predictors in the regression models. Because of the abundance of haplotypes, only a limited number of haplotypes are allowed. Via backward selection the haplotypes with the lowest p-values are retained. Multi-loci haplotypes are only considered if one of its subset haplotypes are retained in the predictor matrix.
 #' 
-#' @param yi An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.
+#' @param outcome An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.
 #' @param EM_mat An optional matrix. Denoting for each individual the probabilities estimated for each possible diplotypes, as can be obtained via \code{EM-algorithm}.
+#' @param weighted_mat An optional matrix. Similar to \code{EM_mat}, only now each observed diplotype of an individual has its own row with an 
 #' @param regression An optional character. Multiple options are possible: \code{NULL} (default), \code{gaussian} and \code{logistic}. If not \code{NULL} forces the EM-algorithm to run a regression analysis each iteration which is used for haplotype frequency estimation. Then requires an outcome for each individual in \code{outcome}.  If \code{NULL}, haplotype frequency estimation will proceed without the regression analyses.
 #' @param regression_reference A character. Which predictor, or which predictors, should be used as reference group in the regression models. 
 #' @param only_sign_EES A logical scalar. Whether or not multi-locus haplotypes are only allowed to be constructed from significant alleles. 
-#' @param pval_thresh A numeric value \in \{0, 1\}. Multi-locus haplotypes with p-values below this threshold value are retained in the regression model as predictors.
+#' @param pval_thresh A numeric value in \{0, 1\}. Multi-locus haplotypes with p-values below this threshold value are retained in the regression model as predictors.
 #' @param candidate_list A list. Overview of haplotypes that need to be predictors in the regression models.
-#' @param noCNV a logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.
+#' @param noCNV a logical scalar. Whether or not the copy number variation haplotypes should be accommodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.
+#' @param CNV_option A character. Indicating what to do with the copy number variation alleles with the inclusion of the outcome (either "first", "second", or "third"). 
+#' @param gene_indication A logical scalar. Whether or not it is indicated from which gene combination the allele or haplotype is (default is \emph{TRUE}).
 #' 
 #' @return A list where each list element contains the estimated betas from each regression step.
 #' 
-iterative_modeling = iterative_modelling = function(outcome, EM_mat = NULL, weighted_mat = NULL, regression = "gaussian", regression_reference = "NEG", only_sign_EES = TRUE, pval_thresh = 0.10, 
+iterative_modeling = function(outcome, EM_mat = NULL, weighted_mat = NULL, regression = "gaussian", regression_reference = "NEG", only_sign_EES = TRUE, pval_thresh = 0.10, 
                                                     candidate_list = NULL, noCNV = TRUE, CNV_option = "second", gene_indication = FALSE){
-  
-  
-  
+
   ##
   suppress_warnings <- function(.expr, .f, ...){
     eval.parent(substitute(
@@ -28,8 +29,6 @@ iterative_modeling = iterative_modelling = function(outcome, EM_mat = NULL, weig
           invokeRestart("muffleWarning")
         }})))}         
   ##
-  
-  
   
   
   
@@ -100,6 +99,11 @@ iterative_modeling = iterative_modelling = function(outcome, EM_mat = NULL, weig
       
       pvals = sum_mod[[i - 1]]$pvals[!str_detect(names(sum_mod[[i - 1]]$pvals), "Intercept")]
         
+      if(is.null(pvals)){
+        sum_mod[[i]] = sum_mod[[i - 1]]
+        next
+      }
+      
       if(only_sign_EES == TRUE){
         pvals = pvals[pvals < pval_thresh]
       }
@@ -256,7 +260,7 @@ iterative_modeling = iterative_modelling = function(outcome, EM_mat = NULL, weig
       }
       
       
-      if(length(HTs_4_mod_all) == 0){
+      if(length(HTs_4_mod_all) == 0 | is.null(occ_mats)){
         sum_mod[[i]] = sum_mod[[i - 1]]
         
         warning_stop = TRUE

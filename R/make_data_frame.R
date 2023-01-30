@@ -1,6 +1,6 @@
 #' @title Makes a data frame from a list
 #'
-#' @description Support function for \code{\link{Splitting_slashes}}.
+#' @description Support function for \code{\link{splitting_slashes}}.
 #'
 #' @param lst A list. The genotype options splitted (\emph{e.g.} via \code{\link[base]{strsplit}}), on the allelic ambiguities (`/`).
 #' 

@@ -1,8 +1,20 @@
 #' @title The Expectation-Maximization (EM-)algorithm
 #' 
+#' @import stats
+#' @import Matrix 
+#' @import stringr
+#' @import glmnet
+# #' @import ggplot2
+#' @import philentropy
+#' @import MASS
+#' @import dplyr
+#' @import gridExtra
+#' @import gtools
+#' @import rlang 
+#' 
 #' @description The EM-algorithm that underlies the complete profile EM-algorithm from \code{\link{HT_reconstruction}}. Haplotype frequencies are estimated in each iteration until convergence. Haplotype frequencies can be estimated 
 #' 
-#' @details
+# #' @details
 #' 
 #' @param lst A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.
 #' @param nl An integer. Total number of iterations till the EM-algorithm is terminated, default = 200.
@@ -14,16 +26,20 @@
 #' @param comb_vals An optional vector. The \emph{true} frequency of the combinational haplotypes is, thus at which values the \code{comb_vals} should be fixed in each iteration.
 #' @param regression An optional character. Multiple options are possible: \code{NULL} (default), \code{linear}, \code{lin_ridge}, \code{logistic}. If not \code{NULL} forces the EM-algorithm to run a regression analysis each iteration which is used for haplotype frequency estimation. Then requires an outcome for each individual in \code{outcome}.  If \code{NULL}, haplotype frequency estimation will proceed without the regression analyses.
 #' @param full_regression A logical scalar. Whether or not the regression models should contain all haplotype predictors next to the allelic predictors. Only functional when \code{regression} is not \code{NULL}. NOTETOSELF: Dit is nu waarschijnlijk al overbodig.
-#' @param type_regression An optional character. 
+#' @param type_regression An optional character. If the EM-algorithm with outcome is requested, which inside EM-algorithm regression model needs to be run (either "alleles", "backward", "penalized"). One an also run all three by supplying "all".
 #' @param outcome An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.
 #' @param status An optional vector. The status of each individual present in \code{lst}, only applicable for survival analysis. Only functional when \code{regression} is not \code{NULL}.
 #' @param regression_reference A character. Which predictor, or which predictors, should be used as reference group in the regression models. 
-#' @param noCNV a logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.
-#' @param true_betas An optional vector. The true betas of the haplotypes, if not \code{NULL} than the regression models will not be run but instead the betas here are used. Only functional when \code{regression} is not \code{NULL}. NOTETOSELF: Dit kan ook weg.
+#' @param noCNV A logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.
+# #' @param true_betas An optional vector. The true betas of the haplotypes, if not \code{NULL} than the regression models will not be run but instead the betas here are used. Only functional when \code{regression} is not \code{NULL}. NOTETOSELF: Dit kan ook weg.
 #' @param nfolds An optional integer. The group size of the cross-validation in \code{\link[glmnet]{cv.glmnet}} used for the penalized regression models. Only functional when \code{regression} is not \code{NULL}.
 #' @param alpha An optional numeric value in \{0, 1\}. Which penalized regression should be performed. If \code{alpha} is 0 the ridge penalty is used, when \code{alpha} is 1 the LASSO penalty is applied and when \code{alpha} (0, 1) the elastic-net is used. Only functional when \code{regression} is not \code{NULL}.
 #' @param lambda An optional integer. The number of standard errors that should be added to the optimal lambda, chosen by \code{\link[glmnet]{cv.glmnet}}. Literature suggest that lambda is 1 is the best choice, if \code{NULL}, this will be chosen. Only functional when \code{regression} is not \code{NULL}.
 #' @param split_evenly An optional logical scalar. Whether or not for the calculation of the probability of the outcome given the diplotype (probYH) the probabilities are equally divided over the combinational and the non-combinatonal haplotypes, or that the combinational haplotype gets its \emph{true} frequency. Note that this \emph{true} frequency is only the true frequency for the frequency, not for probYH.
+#' @param start_HTFs An optional vector. Haplotype frequencies where the diplotype frequencies of the first iteration are started with. If a haplotype is not specified here, it will get a frequency equal to half of the minimum supplied frequency
+#' @param weighted_predictor A logical scalar. Whether or not each observed diplotype of an individual should get its own row where its frequency is added as a weight in the regression models (\code{TRUE} is default).
+#' @param CNV_option A character. Indicating what to do with the copy number variation alleles with the inclusion of the outcome (either "first", "second", or "third"). 
+#' @param probYH_epsilon A numeric value. Threshold value below which it is assumed that the outcome information is purely noise and should be discarded for a given individual.
 #' 
 #' @return Returns both the fully updated probability matrix with the probability vector for each donor, as the calculated haplotype frequencies for each iteration for each haplotype
 #' 

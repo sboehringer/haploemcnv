@@ -19,7 +19,11 @@ iterative_modeling(
 )
 }
 \arguments{
+\item{outcome}{An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.}
+
 \item{EM_mat}{An optional matrix. Denoting for each individual the probabilities estimated for each possible diplotypes, as can be obtained via \code{EM-algorithm}.}
+
+\item{weighted_mat}{An optional matrix. Similar to \code{EM_mat}, only now each observed diplotype of an individual has its own row with an}
 
 \item{regression}{An optional character. Multiple options are possible: \code{NULL} (default), \code{gaussian} and \code{logistic}. If not \code{NULL} forces the EM-algorithm to run a regression analysis each iteration which is used for haplotype frequency estimation. Then requires an outcome for each individual in \code{outcome}.  If \code{NULL}, haplotype frequency estimation will proceed without the regression analyses.}
 
@@ -27,13 +31,15 @@ iterative_modeling(
 
 \item{only_sign_EES}{A logical scalar. Whether or not multi-locus haplotypes are only allowed to be constructed from significant alleles.}
 
-\item{pval_thresh}{A numeric value \in \{0, 1\}. Multi-locus haplotypes with p-values below this threshold value are retained in the regression model as predictors.}
+\item{pval_thresh}{A numeric value in \{0, 1\}. Multi-locus haplotypes with p-values below this threshold value are retained in the regression model as predictors.}
 
 \item{candidate_list}{A list. Overview of haplotypes that need to be predictors in the regression models.}
 
-\item{noCNV}{a logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.}
+\item{noCNV}{a logical scalar. Whether or not the copy number variation haplotypes should be accommodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.}
 
-\item{yi}{An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.}
+\item{CNV_option}{A character. Indicating what to do with the copy number variation alleles with the inclusion of the outcome (either "first", "second", or "third").}
+
+\item{gene_indication}{A logical scalar. Whether or not it is indicated from which gene combination the allele or haplotype is (default is \emph{TRUE}).}
 }
 \value{
 A list where each list element contains the estimated betas from each regression step.

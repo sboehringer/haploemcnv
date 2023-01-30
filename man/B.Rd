@@ -15,5 +15,5 @@ B(HHOi, allele_freq)
 The outcome of the second derivative for the individual of the allele of interest.
 }
 \description{
-Calculating the second derivative of the likelihood for the information loss. Support function of \code{\link{InformationLoss}}.
+Calculating the second derivative of the likelihood for the information loss. Support function of \code{\link{information_loss}}.
 }

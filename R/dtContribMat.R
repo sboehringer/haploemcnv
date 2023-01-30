@@ -1,14 +1,14 @@
-#' Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM-algorithm}} and for \code{\link{InformationLoss}}. [need to be adjusted to own code]
+#' Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM_algorithm}} and for \code{\link{information_loss}}.
 #' 
 #' @param Nhts The number of unique haplotypes for the matrix 
 #'
 #' @return An matrix with the order of haplotype combinations
 #' 
-#' @examples 
-#' Nhts <- 3
-#' \dontrun{
-#' dtContribMat(Nhts)
-#'}
+# #' @examples
+# #' Nhts <- 3
+# #' \dontrun{
+# #' dtContribMat(Nhts)
+# #' }
 #'
 dtContribMat = function(Nhts){
   

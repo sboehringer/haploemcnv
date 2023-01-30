@@ -1,6 +1,6 @@
 #' @title The first derivative of the likelihood for the information Loss
 #' 
-#' @description Calculating the first derivative of the likelihood for the information loss. Support function of \code{\link{InformationLoss}}.
+#' @description Calculating the first derivative of the likelihood for the information loss. Support function of \code{\link{information_loss}}.
 #' 
 #' @param HHOi A vector. The values of an individual indicating how often the allele of interest occurs Homozygous-Heterozygous-Not.
 #' @param allele_freq A numceric value. Allele frequencies of the allele of interest

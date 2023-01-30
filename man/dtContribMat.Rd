@@ -2,7 +2,7 @@
 % Please edit documentation in R/dtContribMat.R
 \name{dtContribMat}
 \alias{dtContribMat}
-\title{Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM-algorithm}} and for \code{\link{InformationLoss}}. [need to be adjusted to own code]}
+\title{Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM_algorithm}} and for \code{\link{information_loss}}.}
 \usage{
 dtContribMat(Nhts)
 }
@@ -13,12 +13,5 @@ dtContribMat(Nhts)
 An matrix with the order of haplotype combinations
 }
 \description{
-Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM-algorithm}} and for \code{\link{InformationLoss}}. [need to be adjusted to own code]
-}
-\examples{
-Nhts <- 3
-\dontrun{
-dtContribMat(Nhts)
-}
-
+Gives the order of all haplotype combinations. Support function for \code{\link{Geno2EM_SB}}, \code{\link{EM_algorithm}} and for \code{\link{information_loss}}.
 }

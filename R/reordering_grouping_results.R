@@ -7,7 +7,7 @@
 #' @param freqs_mat An optional matrix. Each column is a separate reconstruction, of which the column names need to be put in the common gene order. If \code{NULL}, than \code{freqs_lst} must be specified.
 #' @param end_order A character. Haplotype notation of the order in which all reconstructions must be denoted.
 #'
-#' @return 
+#' @return A matrix with for each column the estimated values in the same order.
 #' 
 # #' @examples 
 # #' gene1 <- list(c("001+001", "001+002", "002+002"), "003+NEG", c("001+NEG", "003+NEG"))

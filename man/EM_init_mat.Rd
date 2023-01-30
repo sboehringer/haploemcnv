@@ -10,17 +10,12 @@ EM_init_mat(lst, init_equal = TRUE, start_HTFs = NULL)
 \item{lst}{A list. Each possible diplotype of an individual has a separate argument, can be obtained via \code{\link{all_options}}.}
 
 \item{init_equal}{A logical scalar. Whether or not the probabilities in the initial value matrix are equal (a 0 when diplotype is not compatible with individuals diplotype call, and a 1 when the diplotype is compatible) or that the number of times a compatible diplotype is stated in \code{lst} equals the value the initial value matrix should have (\code{TRUE} is default).}
+
+\item{start_HTFs}{An optional vector. Haplotype frequencies where the diplotype frequencies of the first iteration are started with. If a haplotype is not specified here, it will get a frequency equal to half of the minimum supplied frequency}
 }
 \value{
 A matrix with the initial values for the EM-algorithm. Each column represents a possible diplotype (that has been observed for at least one of the individuals) and each row represents a individual.
 }
 \description{
 Initial value matrix consists a 1 for all diplotypes that are compatible with the data, and a 0 for all diplotypes that are not compatible. Support function of \code{\link{EM_algorithm}}.
-}
-\examples{
-lst = list(c("001+001", "001+002", "002+002"), "003+NEG", c("001+NEG", "003+NEG"))
-\dontrun{
-EM_init_mat(lst)
-}
-
 }

@@ -1,6 +1,6 @@
 #' @title Alter compound allele frequencies in haplotypes
 #' 
-#' @description For the profile EM-algorithm the compound allele frequency needs to be kept at bay. Support function for \code{\link{EM-algorithm}}.
+#' @description For the profile EM-algorithm the compound allele frequency needs to be kept at bay. Support function for \code{\link{EM_algorithm}}.
 #' 
 #' @param haplotypes A vector. Haplotypes and their probabilities.
 #' @param comb_vals A vector. Compound haplotypes and their \emph{true} frequency

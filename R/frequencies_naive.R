@@ -4,10 +4,10 @@
 #'
 #' @param lst A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.
 #' @param haplo A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequenices, or immediately start by estimating diplotype frequencies (\code{TRUE} is default). 
-#' @param adj_comb_vals An optional vector. \lars{Currently unknown}.
+#' @param adj_comb_vals An optional vector. Currently not doing anything, so keep \code{NULL}.
 #' @param obs_diplos A logical scalar. Whether or not diplotype frequencies are estimated for only the observed diplotypes, or also for all theoretically possible diplotypes (\code{TRUE} is default).
 #'
-#' @return 
+#' @return The estimated diplotype frequencies for all unique diplotypes. Haplotype frequencies are supplied if asked for.
 #' 
 # #' @examples
 # #' x = list(c("001+001", "001+002", "002+002"), "003+NEG", c("001+NEG", "003+NEG"))
@@ -15,7 +15,7 @@
 # #' frequencies_naive(lst = x)
 # #' }
 #' 
-frequencies_naive = function(lst, haplo = TRUE, adj_comb_vals = NULL, obs_diplos = TRUE){
+frequencies_naive = function(lst, haplo = TRUE, obs_diplos = TRUE, adj_comb_vals = NULL){
   
   len_lst = length(lst)
   

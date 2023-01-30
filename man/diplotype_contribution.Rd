@@ -13,5 +13,5 @@ diplotype_contribution(nr_haplo)
 A matrix with all diplotypes as rows and all haplotypes as columns. The values indicate how often the haplotype contributes to the diplotype.
 }
 \description{
-Give all theoretically possible diplotype configurations for a specified number of haplotypes. Support function for \code{\link{EM-algorithm}} and \code{\link{InformationLoss}}.
+Give all theoretically possible diplotype configurations for a specified number of haplotypes. Support function for \code{\link{EM_algorithm}} and \code{\link{information_loss}}.
 }

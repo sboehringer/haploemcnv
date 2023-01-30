@@ -15,5 +15,5 @@ SS(HHOi, allele_freq)
 The product of the outcome of the first derivative for the individual of the allele of interest.
 }
 \description{
-Calculating the first derivative of the likelihood for the information loss. Support function of \code{\link{InformationLoss}}.
+Calculating the first derivative of the likelihood for the information loss. Support function of \code{\link{information_loss}}.
 }

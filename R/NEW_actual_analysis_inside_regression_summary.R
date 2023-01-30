@@ -3,7 +3,7 @@
 #'
 actual_analysis_inside_regression_summary = function(last_betas, beta_genes, b0, gene_notation = TRUE, full = TRUE, combinations = NULL, mult_factor = 1){
   
-  nr_genes = length(beta_genes)
+  nr_genes = length(beta_genes); gene_names = names(beta_genes)
   beta_genes_full = beta_genes = lapply(beta_genes, function(x){x * mult_factor})
   for(y in 1:nr_genes){
     beta_genes_y = beta_genes_full[[y]][!str_detect(names(beta_genes_full[[y]]), "NEG")]; names_beta_genes_y = names(beta_genes_y)

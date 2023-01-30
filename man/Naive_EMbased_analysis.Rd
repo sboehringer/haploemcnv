@@ -4,21 +4,12 @@
 \alias{Naive_EMbased_analysis}
 \title{Naive HT reconstruction analysis with the EM-algorithm updated diplotype list}
 \usage{
-Naive_EMbased_analysis(
-  lst,
-  haplo = TRUE,
-  lst_freqs_pre = NULL,
-  adj_comb_vals = NULL
-)
+Naive_EMbased_analysis(lst, haplo = TRUE)
 }
 \arguments{
 \item{lst}{A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.}
 
 \item{haplo}{A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequencies, or immediately start by estimating diplotype frequencies (\code{TRUE} is default).}
-
-\item{lst_freqs_pre}{An optional vector. \lars{Currently unknown}.}
-
-\item{adj_comb_vals}{An optional vector. \lars{Currently unknown}.}
 }
 \description{
 Runs the naive analysis with the EM-algorithm updated diplotype list, to be compared to the analysis of the complete EM-algorithm based \code{\link{HT_reconstruction}}.

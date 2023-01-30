@@ -4,16 +4,16 @@
 #' 
 #' @param lst A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.
 #' @param haplo A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequencies, or immediately start by estimating diplotype frequencies (\code{TRUE} is default). 
-#' @param lst_freqs_pre An optional vector. \lars{Currently unknown}.
-#' @param adj_comb_vals An optional vector. \lars{Currently unknown}.
+# #' @param lst_freqs_pre An optional vector. \lars{Currently unknown}.
+# #' @param adj_comb_vals An optional vector. \lars{Currently unknown}.
 #' 
-Naive_EMbased_analysis = function(lst, haplo = TRUE, lst_freqs_pre = NULL, adj_comb_vals = NULL){
+Naive_EMbased_analysis = function(lst, haplo = TRUE){  # , lst_freqs_pre = NULL, adj_comb_vals = NULL){
   
   len_lst = length(lst)
   
-  if(is.null(lst_freqs_pre)){
-    lst_freqs_pre = frequencies_naive(lst, haplo = haplo, adj_comb_vals = adj_comb_vals)
-  } 
+  # if(is.null(lst_freqs_pre)){
+    lst_freqs_pre = frequencies_naive(lst, haplo = haplo)
+  # } 
   
   naive_choice = NULL
   for(i in 1:len_lst){

@@ -21,7 +21,7 @@ reordering_grouping_results(
 \item{end_order}{A character. Haplotype notation of the order in which all reconstructions must be denoted.}
 }
 \value{
-
+A matrix with for each column the estimated values in the same order.
 }
 \description{
 In order to compare the estimates from different reconstructions and/or starting genes, the haplotypes must be in the same order. Vector names will be put in the same common gene order.

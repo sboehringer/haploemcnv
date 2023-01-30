@@ -45,11 +45,13 @@ EM_algorithm(
 
 \item{equal_first}{A logical scalar. Whether or not the estimated haplotype frequencies of the first iteration are equal (\code{FALSE} is default).}
 
+\item{start_HTFs}{An optional vector. Haplotype frequencies where the diplotype frequencies of the first iteration are started with. If a haplotype is not specified here, it will get a frequency equal to half of the minimum supplied frequency}
+
 \item{regression}{An optional character. Multiple options are possible: \code{NULL} (default), \code{linear}, \code{lin_ridge}, \code{logistic}. If not \code{NULL} forces the EM-algorithm to run a regression analysis each iteration which is used for haplotype frequency estimation. Then requires an outcome for each individual in \code{outcome}.  If \code{NULL}, haplotype frequency estimation will proceed without the regression analyses.}
 
 \item{full_regression}{A logical scalar. Whether or not the regression models should contain all haplotype predictors next to the allelic predictors. Only functional when \code{regression} is not \code{NULL}. NOTETOSELF: Dit is nu waarschijnlijk al overbodig.}
 
-\item{type_regression}{An optional character.}
+\item{type_regression}{An optional character. If the EM-algorithm with outcome is requested, which inside EM-algorithm regression model needs to be run (either "alleles", "backward", "penalized"). One an also run all three by supplying "all".}
 
 \item{outcome}{An optional vector. The outcome of each individual present in \code{lst}. Only functional when \code{regression} is not \code{NULL}.}
 
@@ -59,7 +61,7 @@ EM_algorithm(
 
 \item{comb_vals}{An optional vector. The \emph{true} frequency of the combinational haplotypes is, thus at which values the \code{comb_vals} should be fixed in each iteration.}
 
-\item{noCNV}{a logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.}
+\item{noCNV}{A logical scalar. Whether or not the copy number variation haplotypes should be accomodated in the allelic predictors or should be kept as separate predictors. Only functional when \code{regression} is not \code{NULL}.}
 
 \item{nfolds}{An optional integer. The group size of the cross-validation in \code{\link[glmnet]{cv.glmnet}} used for the penalized regression models. Only functional when \code{regression} is not \code{NULL}.}
 
@@ -69,14 +71,15 @@ EM_algorithm(
 
 \item{split_evenly}{An optional logical scalar. Whether or not for the calculation of the probability of the outcome given the diplotype (probYH) the probabilities are equally divided over the combinational and the non-combinatonal haplotypes, or that the combinational haplotype gets its \emph{true} frequency. Note that this \emph{true} frequency is only the true frequency for the frequency, not for probYH.}
 
-\item{true_betas}{An optional vector. The true betas of the haplotypes, if not \code{NULL} than the regression models will not be run but instead the betas here are used. Only functional when \code{regression} is not \code{NULL}. NOTETOSELF: Dit kan ook weg.}
+\item{weighted_predictor}{A logical scalar. Whether or not each observed diplotype of an individual should get its own row where its frequency is added as a weight in the regression models (\code{TRUE} is default).}
+
+\item{CNV_option}{A character. Indicating what to do with the copy number variation alleles with the inclusion of the outcome (either "first", "second", or "third").}
+
+\item{probYH_epsilon}{A numeric value. Threshold value below which it is assumed that the outcome information is purely noise and should be discarded for a given individual.}
 }
 \value{
 Returns both the fully updated probability matrix with the probability vector for each donor, as the calculated haplotype frequencies for each iteration for each haplotype
 }
 \description{
 The EM-algorithm that underlies the complete profile EM-algorithm from \code{\link{HT_reconstruction}}. Haplotype frequencies are estimated in each iteration until convergence. Haplotype frequencies can be estimated
-}
-\details{
-
 }

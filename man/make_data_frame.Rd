@@ -13,5 +13,5 @@ make_data_frame(lst)
 A data_frame with the options of each gene copy as a different row. The number of columns are equal to the gene copy with the most options, other rows are supplemented with \code{NA}.
 }
 \description{
-Support function for \code{\link{Splitting_slashes}}.
+Support function for \code{\link{splitting_slashes}}.
 }

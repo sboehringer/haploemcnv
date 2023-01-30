@@ -1,8 +1,10 @@
 #'
 #'
 #'
-actual_analysis_HT_summary = function(all_HTFs = NULL, last_HTFs, all_true_HTFs, HTF_selection_sim, HTF_selection_max_val, selection_index = 1, nr_config = 1, paper1 = FALSE){
+actual_analysis_HT_summary = function(all_HTFs = NULL, last_HTFs, all_true_HTFs, HTF_selection_sim, HTF_selection_max_val, selection_index = 1, 
+                                      nr_config = 1, paper1 = FALSE, selection_threshold = 0.01){
   
+  N = nrow(last_HTFs)
   nr_genes = length(unlist(strsplit(colnames(last_HTFs)[1], "\\-")))
   
   if(paper1){

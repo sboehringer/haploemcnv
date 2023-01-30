@@ -4,7 +4,7 @@
 #' 
 #' @param lst A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.
 #' @param haplo A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequencies, or immediately start by estimating diplotype frequencies (\code{TRUE} is default).
-#' @param CO_thresh A numeric value \in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be collapsed. 
+#' @param CO_thresh A numeric value in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be collapsed. 
 #' 
 #' @return A choice vector for the dictatorial naive analysis and a probability matrix for the democratic naive analysis. For both methods also haplotype frequencies are returned if \code{haplo} is \code{TRUE}
 #' 

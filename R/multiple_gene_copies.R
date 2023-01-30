@@ -3,6 +3,7 @@
 #' @description Support function of \code{\link{all_options}}. Function can only correctly handle an argument that has a `+` and cannot correctly handle arguments that contain allelic (`/`) or genotypic ambiguities (`|`).
 #'
 #' @param xx A character. The possible genotype option of the individual.
+#' @param NEGs An optional character. How the `NEG` allele should be called, if \code{NULL} the `NEG` alleles will just be called `NEG`.
 #'
 #' @return All possible genotypes with the multi-allele haplotype
 #' 

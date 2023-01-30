@@ -15,14 +15,16 @@ information_loss(
 \arguments{
 \item{EM_out}{An optional EM-algorithm analysis of \code{lst}, as provided by \code{\link{EM_algorithm}}.}
 
-\item{HTFs}{An optional vector. Haplotype frequencies for all haplotypes, as are estimated in \code{\link{EM_algorithm}}. \lars{was haplo_freqs}}
+\item{HTFs}{An optional vector. Haplotype frequencies for all haplotypes, as are estimated in \code{\link{EM_algorithm}}. This was haplo_freqs}
 
 \item{EM_mat}{An optional matrix. Probabilities for each compatible diplotype in the dataset, as can be provided by \code{\link{EM_algorithm}}.}
+
+\item{haplotype_level}{A logical scalar. Whether or not the supplied EM_matrix is on haplotype level or on diplotype level (\code{FALSE} is default).}
 
 \item{nr_gene}{An integer. The number of genes that are in the reconstruction.}
 }
 \value{
-An matrix with the calculated I_{Y}, I_{X}, ratio I_{Y} / I_{X} and the effective sample size (I_{Y} $\theta (1 - \theta)$) for the specified gene
+An matrix with the calculated I_{Y}, I_{X}, ratio I_{Y} / I_{X} and the effective sample size (I_{Y} $theta (1 - theta)$) for the specified gene
 }
 \description{
 Calculates the amount of information loss within a reconstruction, as discussed in \cite{}.

@@ -1,6 +1,6 @@
 #' @title Gives all diplotype configurations for a number of haplotypes 
 #' 
-#' @description Give all theoretically possible diplotype configurations for a specified number of haplotypes. Support function for \code{\link{EM-algorithm}} and \code{\link{InformationLoss}}.
+#' @description Give all theoretically possible diplotype configurations for a specified number of haplotypes. Support function for \code{\link{EM_algorithm}} and \code{\link{information_loss}}.
 #' 
 #' @param nr_haplo An integer. Number of unique haplotypes for the matrix.
 #'

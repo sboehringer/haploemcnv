@@ -1,6 +1,6 @@
-#' Code for converting my dataset to Stefan's functions, also support function for \code{\link{InformationLoss} and \code\link{likelihood_calc}}.
+#' Code for converting my dataset to Stefan's functions, also support function for \code{\link{information_loss}} and \code{\link{likelihood_haplotypes}}.
 #'
-#' @param dat The dataset to convert
+#' @param dat The dataset to convert.
 #' @param Init Logical. Whether or not make an 0/1-initial value matrix. TRUE is default.
 #' 
 #' @return The output is a matrix with all possible genotype combinations (not only those that are observed) in a different columns

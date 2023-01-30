@@ -1,8 +1,8 @@
 Package: haploemcnv
 Type: Package
 Title: EM algorithms for reconstructing haplotypes in coplex genetic regions
-Version: 0.3-0
-Date: 2023-01-23
+Version: 0.4-0
+Date: 2023-01-30
 Author: Lars van der Burg <lars.lj.vdburg@gmail.com>
 Maintainer: Lars van der Burg <lars.lj.vdburg@gmail.com>
 Description: EM algorithms for reconstructing haplotypes in coplex genetic regions inclouding copy number variations.
@@ -66,16 +66,17 @@ Collate:
     HT_reconstruction.R
     iterative_modeling.R
     KL_divergence.R
-    Nested_loop_plot.R
     NEW_actual_analysis_HT_summary.R
     NEW_actual_analysis_inside_regression_summary.R
     NEW_actual_analysis_outside_regression_summary.R
     NEW_weighted_predictor_matrix.R
+    occurrence_coding.R
     outside_regression_models.R
     penalized_significance.R
     reducing_list.R
     reordering_grouping_results.R
     rounding.R
+    setting_betas_haplotypes.R
     table_maker.R
     vector_2_table.R
     haploemcnv.R

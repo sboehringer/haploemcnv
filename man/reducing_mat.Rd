@@ -19,5 +19,5 @@ reducing_mat(EM_mat, nr_gene, haplo = FALSE, noCNV = FALSE)
 A EM-algorithm matrix for the assigned gene(s).
 }
 \description{
-Reduces a multi-locus updated diplotype probability matrix to a single-locus diplotype probability matrix. Support function of \code{\link{InformationLoss}}.
+Reduces a multi-locus updated diplotype probability matrix to a single-locus diplotype probability matrix. Support function of \code{\link{information_loss}}.
 }

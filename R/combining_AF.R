@@ -20,7 +20,7 @@
 #' @param CO_min An optional integer. The cut-off minimum, the minimum number of haplotypes which need to be grouped to actually group haplotypes.
 #' @param excluding_haplo An optional vector. Which haplotypes never should be grouped, even if they do not meet the chosen criteria. NOTETOSELF: WAS excluding_geno, CAN BE WRONG IN OTHER FUNCTIONS
 #' @param all_previous A logical scalar. Whether or not all previous compound haplotypes should be grouped in the newly formed compound haplotype. The name of all previous compound haplotypes should start with \emph{Comb}.
-#' @param gene_subset An optional vector. Which genes need to be grouped if grouping_haplo = FALSE. NOTETOSELF: Volgens mij kan ik alles wat haplo_grouping == FALSE is wel weghalen, wordt denk ik niet meer gebruikt en weet ook niet wat ik er doe...}
+#' @param gene_subset An optional vector. Which genes need to be grouped if grouping_haplo = FALSE.
 #' 
 #' @return A list with all possible genotypes of each donor, but now with some alleles replaced by `Comb`. Additionally are also the alleles which are combined into the `Comb` group provided.
 #' 
@@ -31,7 +31,7 @@
 # #' }
 #' 
 combining_AF = function(lst, EM_out = NULL, haplotypes = NULL, haplo_grouping = TRUE, comb_name = NULL, cumulative_threshold = NULL, cumulative_n = NULL, CO_thresh = 1e-7, CO_perc = 100, CO_min = 2, 
-                        excluding_haplo = NULL, all_previous = TRUE, gene_subset = NULL){
+                        excluding_haplo = NULL, all_previous = TRUE, gene_subset = NULL){  
   
   len_lst = length(lst)
   

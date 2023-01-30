@@ -7,7 +7,6 @@
 grouping_order_iter(
   gene1,
   ...,
-  comb_gene1 = FALSE,
   reference_info = NULL,
   gene_names = NULL,
   orderings = NULL,
@@ -42,13 +41,11 @@ grouping_order_iter(
 
 \item{combine_haplos}{A logical scalar. Whether or not low-frequency haplotypes in the haplotype reconstruction are grouped (\code{TRUE} is default).}
 
-\item{CO_thresh}{An optional numeric value \in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be grouped.}
+\item{CO_thresh}{An optional numeric value in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be grouped.}
 
-\item{CO_perc}{An optional numerical value \in \{0, 100\}. The cut-off percentage, only the haplotypes belonging to the percentage of haplotypes with the lowest frequency are eligible for grouping.}
+\item{CO_perc}{An optional numerical value in \{0, 100\}. The cut-off percentage, only the haplotypes belonging to the percentage of haplotypes with the lowest frequency are eligible for grouping.}
 
 \item{CO_min}{An optional integer. The cut-off minimum, the minimum number of haplotypes which need to be grouped to actually group haplotypes.}
-
-\item{other_genes}{An optional list. Diplotype list of the other genes that need to be added into the reconstruction, can be obtained via \code{\link{all_options}}.}
 }
 \value{
 The output of \code{\link{grouping_order}} for each of the grouping configurations with the starting gene and the gene added into the reconstruction (with analysis).

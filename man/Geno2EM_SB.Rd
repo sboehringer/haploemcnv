@@ -2,12 +2,12 @@
 % Please edit documentation in R/Geno2EM_SB.R
 \name{Geno2EM_SB}
 \alias{Geno2EM_SB}
-\title{Code for converting my dataset to Stefan's functions, also support function for \code{\link{InformationLoss} and \code\link{likelihood_calc}}.}
+\title{Code for converting my dataset to Stefan's functions, also support function for \code{\link{information_loss}} and \code{\link{likelihood_haplotypes}}.}
 \usage{
 Geno2EM_SB(dat, Init = TRUE)
 }
 \arguments{
-\item{dat}{The dataset to convert}
+\item{dat}{The dataset to convert.}
 
 \item{Init}{Logical. Whether or not make an 0/1-initial value matrix. TRUE is default.}
 }
@@ -15,5 +15,5 @@ Geno2EM_SB(dat, Init = TRUE)
 The output is a matrix with all possible genotype combinations (not only those that are observed) in a different columns
 }
 \description{
-Code for converting my dataset to Stefan's functions, also support function for \code{\link{InformationLoss} and \code\link{likelihood_calc}}.
+Code for converting my dataset to Stefan's functions, also support function for \code{\link{information_loss}} and \code{\link{likelihood_haplotypes}}.
 }

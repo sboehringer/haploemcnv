@@ -1,6 +1,6 @@
 #' @title Reducing a diplotype probability matrix to the diplotypes of a single gene 
 #' 
-#' @description Reduces a multi-locus updated diplotype probability matrix to a single-locus diplotype probability matrix. Support function of \code{\link{InformationLoss}}.
+#' @description Reduces a multi-locus updated diplotype probability matrix to a single-locus diplotype probability matrix. Support function of \code{\link{information_loss}}.
 #' 
 #' @param EM_mat A matrix. The matrix updated via \code{\link{EM_algorithm}} for a combination of genes.
 #' @param nr_gene An integer or a vector. To which genes \code{EM_mat} needs to be reduced.

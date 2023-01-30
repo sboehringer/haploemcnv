@@ -11,7 +11,7 @@ Naive_analysis(lst, haplo = TRUE, CO_thresh = 1e-07)
 
 \item{haplo}{A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequencies, or immediately start by estimating diplotype frequencies (\code{TRUE} is default).}
 
-\item{CO_thresh}{A numeric value \in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be collapsed.}
+\item{CO_thresh}{A numeric value in \{0, 1\}. The cut-off threshold, only haplotypes lower than this threshold are be collapsed.}
 }
 \value{
 A choice vector for the dictatorial naive analysis and a probability matrix for the democratic naive analysis. For both methods also haplotype frequencies are returned if \code{haplo} is \code{TRUE}

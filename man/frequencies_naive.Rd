@@ -4,19 +4,19 @@
 \alias{frequencies_naive}
 \title{Calculates frequencies for the naive analysis}
 \usage{
-frequencies_naive(lst, haplo = TRUE, adj_comb_vals = NULL, obs_diplos = TRUE)
+frequencies_naive(lst, haplo = TRUE, obs_diplos = TRUE, adj_comb_vals = NULL)
 }
 \arguments{
 \item{lst}{A list. Data containing the possible diplotypes of each donor as a separate list element, can be obtained via \code{\link{all_options}}.}
 
 \item{haplo}{A logical scalar. Whether or not diplotype frequencies are estimated by first estimating haplotype frequenices, or immediately start by estimating diplotype frequencies (\code{TRUE} is default).}
 
-\item{adj_comb_vals}{An optional vector. \lars{Currently unknown}.}
-
 \item{obs_diplos}{A logical scalar. Whether or not diplotype frequencies are estimated for only the observed diplotypes, or also for all theoretically possible diplotypes (\code{TRUE} is default).}
+
+\item{adj_comb_vals}{An optional vector. Currently not doing anything, so keep \code{NULL}.}
 }
 \value{
-
+The estimated diplotype frequencies for all unique diplotypes. Haplotype frequencies are supplied if asked for.
 }
 \description{
 To calculate haplotype and diplotype frequencies for the naive analysis.

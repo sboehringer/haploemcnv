@@ -4,14 +4,13 @@
 #' 
 #' @details Different forms of ambiguity within the genotype data are recognized. A `+` indicates that there are multiple copies of a single gene in the individual's genotype; a `/` indicates allelic ambiguity, different allelic possibilities for the gene copy, and `|` indicates genotypic ambiguity, different genotypic possibilities for the complete genotype.
 #' 
-#' 
 #' @param dat A vector. The genotyped data of the individuals, stating the whole genotype of a individual in one argument.
 #' @param NEGs An optional character. How the `NEG` allele should be called, if \code{NULL} the `NEG` alleles will just be called `NEG`.
 #' @param POS.rep A logical scalar. Whether or not all `POS` diplotype should be replaced by all other observed diplotypes. Individuals with \code{NA} as genotype will then also obtain all observed diplotypes.
 #' 
 #' @return A list with each element stating all unique diplotypes of a individual that are compatible with the individual's genotype.
 #' 
-#' @examples 
+#' @examples
 #' dat = c("001/002+001/002", "003+004+005")
 #' \dontrun{
 #' all_options(dat = dat)

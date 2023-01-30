@@ -17,5 +17,5 @@ changing_AFs_in_HFs(haplotypes, comb_vals, nonneg = TRUE)
 A vector of the haplotypes and some altered probabilities.
 }
 \description{
-For the profile EM-algorithm the compound allele frequency needs to be kept at bay. Support function for \code{\link{EM-algorithm}}.
+For the profile EM-algorithm the compound allele frequency needs to be kept at bay. Support function for \code{\link{EM_algorithm}}.
 }

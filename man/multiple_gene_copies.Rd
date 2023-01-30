@@ -8,6 +8,8 @@ multiple_gene_copies(xx, NEGs = NULL)
 }
 \arguments{
 \item{xx}{A character. The possible genotype option of the individual.}
+
+\item{NEGs}{An optional character. How the `NEG` allele should be called, if \code{NULL} the `NEG` alleles will just be called `NEG`.}
 }
 \value{
 All possible genotypes with the multi-allele haplotype

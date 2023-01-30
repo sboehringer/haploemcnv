@@ -1,10 +1,10 @@
 #' @title Calculation of Delta_{ij}
 #' 
-#' @description Support function for \code{\link{KIR_simulation_preparation_real}}.
-#' 
 #' @param LD_out The linkage disequilibrium matrix for the full K genes, as provided by \code{\link{LD}}. 
 #' @param p_i An optional vector. Haplotype frequencies for the K-1 genes.
 #' @param q_j An optional vector. Haplotype frequencies for gene K.
+#' 
+# #' @description Support function for \code{\link{KIR_simulation_preparation_real}}.
 #' 
 #' @return Vector with Delta_{ij} values.
 #' 
