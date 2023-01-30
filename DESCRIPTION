@@ -1,7 +1,7 @@
 Package: haploemcnv
 Type: Package
 Title: EM algorithms for reconstructing haplotypes in coplex genetic regions
-Version: 0.4-3
+Version: 0.4-4
 Date: 2023-01-30
 Author: Lars van der Burg <lars.lj.vdburg@gmail.com>
 Maintainer: Lars van der Burg <lars.lj.vdburg@gmail.com>
@@ -94,4 +94,5 @@ Enhances:
     bench,
     ggthemes
 SystemRequirements: 
+LazyData: true
 RoxygenNote: 7.1.2

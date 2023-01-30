@@ -35,7 +35,7 @@ packageDefinition = list(
 		            #"gt", 
 		),
 		suggests = c(),
-		news = "0.4-3	Data set\n0.4-0	Cleanup\n0.3-0	Documentation\n0.2-0	Installable version\n0.1-0	Initial release",
+		news = "0.4-4	Data set\n0.4-0	Cleanup\n0.3-0	Documentation\n0.2-0	Installable version\n0.1-0	Initial release",
 		license = 'LGPL-2'
 		#vignettes = "vignettes/vignette-package.Rmd"
 	),
